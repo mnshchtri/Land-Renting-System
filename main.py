@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+from read import read_file
 def print_banner():
     banner = """
      _                     _   _____            _   _                _____           _                 
@@ -14,6 +16,22 @@ def print_banner():
 def main():
     # Print ASCII banner
     print_banner()
+    lands = read_file()
+    while True:
+        print("\nTransaction menu:")
+        print("1. Rent land")
+        print("2. Return land")
+        print("3. Exit")
+        option = input("Choose transaction option (1/2/3): ")
+        if option == "1":
+            rent_land(lands)
+        elif option == "2":
+            return_land(lands)
+        elif option == "3":
+            print("Exiting program.")
+            break
+        else:
+            print("Invalid option. Please choose 1, 2, or 3.")
 
 if __name__ == "__main__":
     main()

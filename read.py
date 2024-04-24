@@ -29,9 +29,10 @@ def read_file():
     # Return the list of land dictionaries
     return lands
 
-# Call the function to read the file
+
+'''# Call the function to read the file
 land_data = read_file()
 
 # Print the land data
 for land in land_data:
-    print(land)
+    print(land)'''
