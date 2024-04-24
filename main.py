@@ -15,3 +15,6 @@ def main():
     # Print ASCII banner
     print_banner()
 
+if __name__ == "__main__":
+    main()
+
