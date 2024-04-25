@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from read import read_file
+
 def print_banner():
     banner = """
      _                     _   _____            _   _                _____           _                 
@@ -13,12 +14,38 @@ def print_banner():
     """
     print(banner)
 
+def display_lands(lands):
+    # Function to display the availability of lands
+    print("--------------------------------Techno Property Nepal---------------------------------")
+    print("                               Kamal Pokhari, Kathmandu                               ")
+    print("--------------------------------------------------------------------------------------")
+    print("Available lands:")
+    print("--------------------------------------------------------------------------------------")
+    print("Kitta Number | City District | Land Faced | Area | Price")
+    print("--------------------------------------------------------------------------------------")
+    for land in lands:
+        if land["status"] == "Available":
+            print(land['kitta_number'] + " | " + land['city_district'] + " | " + land['land_faced'] + " | " + land['area'] + " anna | " + land['price'])
+    print("--------------------------------------------------------------------------------------")
+
+    print("\nNot available lands:")
+    print("--------------------------------------------------------------------------------------")
+    print("Kitta Number | City District | Land Faced | Area | Price")
+    print("--------------------------------------------------------------------------------------")
+    for land in lands:
+        if land["status"] == "Not Available":
+            print(land['kitta_number'] + " | " + land['city_district'] + " | " + land['land_faced'] + " | " + land['area'] + " anna | " + land['price'])
+    print("--------------------------------------------------------------------------------------")
+
 def main():
     # Print ASCII banner
     print_banner()
+
     lands = read_file()
+    display_lands(lands)
     while True:
         print("\nTransaction menu:")
+        print("--------------------------------------------------------------------------------------")
         print("1. Rent land")
         print("2. Return land")
         print("3. Exit")
@@ -28,11 +55,11 @@ def main():
         elif option == "2":
             return_land(lands)
         elif option == "3":
-            print("Exiting program.")
+            print("\n----------------------Thank You for Using our system, signing out!!-------------------")
+            print("\nExiting program.............")
             break
         else:
             print("Invalid option. Please choose 1, 2, or 3.")
 
 if __name__ == "__main__":
     main()
-
