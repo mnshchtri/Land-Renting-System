@@ -4,3 +4,5 @@
 104,Bhaktapur,West,7,80000,Not Available
 105,Tansen,Central,9,90000,Available
 106,Butwal,West,8,110000,Available
+107,Dhangadhi,North,6,70000,Not Available
+108,Rajbiraj,East,3,55000,Available
