@@ -21,8 +21,9 @@ def write_return_invoice(land):
     # Open a file to write the return invoice
     with open("return_invoice_" + land['kitta_number'] + ".txt", "w") as invoice_file:
         # Write the return invoice details
-        invoice_file.write("--------------------------------Techno Property Nepal---------------------------------")
-        invoice_file.write("                               Kamal Pokhari, Kathmandu                               ")
+        invoice_file.write("--------------------------------Techno Property Nepal---------------------------------\n")
+        invoice_file.write("                               Kamal Pokhari, Kathmandu                               \n")
+        invoice_file.write("--------------------------------------------------------------------------------------\n")
         invoice_file.write("Invoice of your rented land:\n")
         invoice_file.write("-------------------------------------------------------------------------------------\n")
         invoice_file.write("Kitta Number: " + land['kitta_number'] + "\n")
