@@ -9,6 +9,12 @@ def rent_land(lands):
                 rent_duration = int(input("Enter the duration of rent (in months): "))
                 total_amount = int(land["price"]) * rent_duration
                 land["status"] = "Not Available"
+                # Update status in lands.txt
+                with open("land.txt", "w") as lands_file:
+                    for l in lands:
+                        if l["kitta_number"] == kitta_number:
+                            l["status"] = "Not Available"
+                        lands_file.write(",".join([l["kitta_number"], l["city_district"], l["land_faced"], l["area"], l["price"], l["status"]]) + "\n")
                 # Call write_to_file function
                 write_to_file(land, customer_name, rent_duration, total_amount)
                 return land, customer_name, rent_duration, total_amount
@@ -26,6 +32,12 @@ def return_land(lands):
             if land["status"] == "Not Available":
                 # Update status to "Available"
                 land["status"] = "Available"
+                # Update status in lands.txt
+                with open("land.txt", "w") as lands_file:
+                    for l in lands:
+                        if l["kitta_number"] == kitta_number:
+                            l["status"] = "Available"
+                        lands_file.write(",".join([l["kitta_number"], l["city_district"], l["land_faced"], l["area"], l["price"], l["status"]]) + "\n")
                 # Call write_return_invoice function
                 write_return_invoice(land)
                 return land
