@@ -48,17 +48,18 @@ def return_land(lands, rent_duration):
                 returned_duration = int(input("Enter the duration of returned (in months): "))
                 price_per_month = int(land["price"])
                 total_amount = 0
-                
-                if int(returned_duration) > int(rent_duration):
-                    # Calculate the total amount with fine
+                if returned_duration > rent_duration:
+                # Calculate the total amount with fine
                     delayed_months = returned_duration - rent_duration
                     fine_price = 0.1 * delayed_months * price_per_month
                     total_amount = (returned_duration * price_per_month) + fine_price
                     print("\nYou returned the land after the rented months. A fine of 10% of the total amount has been applied.")
                 else:
-                    # Calculate the total amount without fine
+                # Calculate the total amount without fine
                     total_amount = returned_duration * price_per_month
+                    fine_price = 0  # Fine price is zero when there's no delay
                     print("\nYou returned the land before or within the rented months. No fine applied.")
+
 
                 # Update status to "Available"
                 land["status"] = "Available"
@@ -84,8 +85,8 @@ def return_land(lands, rent_duration):
                         lands_file.write(",".join([l["kitta_number"], l["city_district"], l["land_faced"], l["area"], l["price"], l["status"]]) + "\n")
                 
                 # Call write_return_invoice function
-                write_to_return_invoice(land, customer_name, returned_duration)
-                return land, customer_name, returned_duration
+                write_to_return_invoice(land, customer_name, returned_duration, total_amount)
+                return land, customer_name, returned_duration, total_amount
             else:
                 print("This land is already available.")
                 return 
