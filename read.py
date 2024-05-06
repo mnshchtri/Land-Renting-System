@@ -6,9 +6,9 @@ def read_file():
     lands = []
 
     # Read each line in the file
-    for line in file:
+    for each in file:
         # Remove newline character at the end of the line and split by comma
-        line_data = line.strip().split(',')
+        line_data = each.strip().split(',')
         
         # Create a dictionary for each land
         land = {
