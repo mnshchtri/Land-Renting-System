@@ -15,7 +15,8 @@ def write_to_file(land, customer_name, rent_duration, total_amount):
         invoice_file.write("Duration of Rent: " + str(rent_duration) + " months\n")
         invoice_file.write("Total Amount: " + str(total_amount) + "\n")
     # Confirm successful invoice generation
-    print("Success: Land rented. Invoice generated.")
+    print("\n*****************Dear " +str(customer_name) + " , you have successfully rented a land.************************")
+    print("\nYour Invoice has been generated.")
 
 def write_return_invoice(land):
     # Open a file to write the return invoice
