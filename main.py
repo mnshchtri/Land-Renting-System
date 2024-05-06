@@ -46,7 +46,35 @@ def main():
 
     lands = read_file()
     display_lands(lands)
+
     while True:
+        print("\n*************************************************************************************")
+        print("\n=====================================================================================")
+        print("|                              Transaction menu:                                     |")
+        print("======================================================================================")
+        print("|                                1. Rent land                                        |")
+        print("======================================================================================")
+        print("|                                2. Return land                                      |")
+        print("======================================================================================")
+        print("|                                3. Exit                                             |")
+        print("======================================================================================")
+        try:
+            option = int(input("Choose transaction option (1/2/3): "))
+            if option == 1:
+                rent_land(lands)
+            elif option == 2:
+                return_land(lands)
+            elif option == 3:
+                print("\n----------------------Thank You for Using our system, signing out!!-------------------")
+                print("\nExiting program.............")
+                break
+            else:
+                print("Invalid option. Please choose 1, 2, or 3.")
+        except ValueError:
+            print("You have provided an Invalid input. Please enter a number (1, 2, or 3).")
+
+    
+    '''while True:
         print("\nTransaction menu:")
         print("--------------------------------------------------------------------------------------")
         print("1. Rent land")
@@ -62,7 +90,7 @@ def main():
             print("\nExiting program.............")
             break
         else:
-            print("Invalid option. Please choose 1, 2, or 3.")
+            print("Invalid option. Please choose 1, 2, or 3.")'''
 
 if __name__ == "__main__":
     main()
