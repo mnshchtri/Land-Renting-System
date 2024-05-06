@@ -17,7 +17,7 @@ def write_to_rent_invoice(land, customer_name, rent_duration, total_amount):
     print("\n*****************Dear " +str(customer_name) + " , you have successfully rented a land.******************")
     
 
-def write_to_return_invoice(land, customer_name, returned_duration, total_amount2):
+def write_to_return_invoice(land, customer_name, returned_duration, total_amount):
     # Open a file to write the return invoice
     with open("return_invoice_" + land['kitta_number'] + ".txt", "w") as invoice_file:
         # Write the return invoice details
@@ -32,6 +32,6 @@ def write_to_return_invoice(land, customer_name, returned_duration, total_amount
         invoice_file.write("Land Faced: " + land['land_faced'] + "\n")
         invoice_file.write("Duration of Returned: " + str(returned_duration) + " months\n")
         invoice_file.write("Area: " + land['area'] + " anna\n")
-        invoice_file.write("Total Amount: " + str(total_amount2) + "\n")
+        invoice_file.write("Total Amount: " + str(total_amount) + "\n")
     # Confirm successful return invoice generation
     print("\n*****************Dear " + str(customer_name) + ", you have successfully returned a land.******************")

@@ -13,7 +13,9 @@ def print_banner():
 
                                                                             
                                                                             
-                                                                by: Manish Karki (N30X)                                                                                                 
+                                                                by: Manish Karki | 23048514    a.k.a (N30X)
+                                                            https://github.com/mnshchtri/Land-Renting-System
+                                                                
     """
     print(banner)
 
