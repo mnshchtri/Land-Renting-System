@@ -2,7 +2,7 @@
 102,Pokhara,East,5,60000,Not Available
 103,Lalitpur,South,10,100000,Not Available
 104,Bhaktapur,West,7,80000,Not Available
-105,Tansen,Central,9,90000,Available
-106,Butwal,West,8,110000,Available
+105,Tansen,Central,9,90000,Not Available
+106,Butwal,West,8,110000,Not Available
 107,Dhangadhi,North,6,70000,Not Available
 108,Rajbiraj,East,3,55000,Available
