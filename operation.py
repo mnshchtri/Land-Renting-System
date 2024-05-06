@@ -54,10 +54,10 @@ def return_land(lands, rent_duration):
                     fine_price = 0.1 * delayed_months * price_per_month
                     total_amount = (returned_duration * price_per_month) + fine_price
                     print("\nYou returned the land after the rented months. A fine of 10% of the total amount has been applied.")
-                else:
+                
+                elif returned_duration <= rent_duration:
                 # Calculate the total amount without fine
                     total_amount = returned_duration * price_per_month
-                    fine_price = 0  # Fine price is zero when there's no delay
                     print("\nYou returned the land before or within the rented months. No fine applied.")
 
 
