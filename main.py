@@ -19,8 +19,11 @@ def print_banner():
 
 def display_lands(lands):
     # Function to display the availability of lands
-    print("--------------------------------Techno Property Nepal---------------------------------")
-    print("                               Kamal Pokhari, Kathmandu                               ")
+    print("\n==============================Techno Property Nepal===================================")
+    print("                              Kamal Pokhari, Kathmandu                                  ")
+    print("======================================================================================")
+    print("\n***Welcome to the database of Techno Property Nepal***")
+    print("***You can see the availabe and not availabe land with its details***\n")
     print("--------------------------------------------------------------------------------------")
     print("Available lands:")
     print("--------------------------------------------------------------------------------------")
@@ -29,9 +32,10 @@ def display_lands(lands):
     for land in lands:
         if land["status"] == "Available":
             print(land['kitta_number'] + " | " + land['city_district'] + " | " + land['land_faced'] + " | " + land['area'] + " anna | " + land['price'])
-    print("--------------------------------------------------------------------------------------")
+    print("--------------------------------------------------------------------------------------\n")
 
-    print("\nNot available lands:")
+    print("--------------------------------------------------------------------------------------")
+    print("Not available lands:")
     print("--------------------------------------------------------------------------------------")
     print("Kitta Number | City District | Land Faced | Area | Price")
     print("--------------------------------------------------------------------------------------")
@@ -46,6 +50,7 @@ def main():
 
     lands = read_file()
     display_lands(lands)
+    rent_duration = 0  # Initialize rent_duration outside the loop
     
     while True:
         print("\n*************************************************************************************")
@@ -63,7 +68,7 @@ def main():
             if option == 1:
                 rent_land(lands)
             elif option == 2:
-                return_land(lands)
+                return_land(lands, rent_duration)  # Pass rent_duration as an argument
             elif option == 3:
                 print("\n----------------------Thank You for Using our system, signing out!!-------------------")
                 print("\nExiting program.............")
