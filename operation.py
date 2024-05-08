@@ -23,7 +23,7 @@ def rent_land(lands):
                 print("Duration of rent: " +str(rent_duration) + " months\n")
                 print("Total Amount: " + str(total_amount) + "\n")
                 print("--------------------------------------------------------------------------------------\n")
-                # Update status in lands.txt
+                # Update status in land.txt
                 with open("land.txt", "w") as lands_file:
                     for l in lands:
                         if l["kitta_number"] == kitta_number:
@@ -82,7 +82,7 @@ def return_land(lands, rent_duration):
                     print("Total Amount: " + str(total_amount) + "\n")
                     print("--------------------------------------------------------------------------------------\n")
                     
-                    # Update status in lands.txt
+                    # Update status in land.txt
                     with open("land.txt", "w") as lands_file:
                         for l in lands:
                             if l["kitta_number"] == kitta_number:
